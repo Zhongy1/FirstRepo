@@ -5,7 +5,7 @@ import * as express from 'express';
 import * as serveStatic from 'serve-static';
 
 const server = http.createServer();
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({ port: 8001 });
 
 console.log('Starting server');
 

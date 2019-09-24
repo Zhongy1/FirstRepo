@@ -3,7 +3,18 @@
 <html>
 
 <head>
+    <script>
+        var ws = new WebSocket('ws://' + location.hostname + ':8001');
+        console.log(location.hostname);
+        ws.onopen = function () {
+            console.log('websocket is connected ...')
+            ws.send('connected')
+        }
 
+        ws.onmessage = function (ev) {
+            console.log(ev);
+        }    
+    </script>
 </head>
 
 <body>
